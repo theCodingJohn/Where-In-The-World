@@ -1,21 +1,28 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useContext } from 'react'
 import axios from "axios"
 import Card from '../../components/Card/Card'
 
+import {DataContext} from "../../context/DataContext"
+
 const Home = () => {
-  const [data, setData] = useState([]);
+  const {data, setData} = useContext(DataContext);
 
   useEffect(() => {
     const getData = async () => {
       try {
-        const res = await axios.get("https://restcountries.eu/rest/v2/all");
-        console.log(res.data[0]);
+        const res = await axios.get("https://restcountries.eu/rest/v2/all"); 
+        localStorage.setItem("data", JSON.stringify(res.data));
         setData(res.data);
       } catch (e) {
         console.log(e)
       }
     }
-    getData()
+    getData();
+  }, [])
+
+  useEffect(() => {
+    const localData = JSON.parse(localStorage.getItem('data')) || [];
+    setData(localData);
   }, [])
 
   const cardItems = data.map((el) => <Card key={el.name} card={{title: `${el.name}`, population: `${el.population}`, region: `${el.region}`, capital: `${el.capital}`, flag: `${el.flag}`}}/>)

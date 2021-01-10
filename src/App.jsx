@@ -7,7 +7,9 @@ import {
 } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
+import Details from "./pages/Details/Details";
 
+import {DataProvider} from "./context/DataContext"
 import "./App.css";
 
 const App = () => {
@@ -15,7 +17,10 @@ const App = () => {
     <Router>
       <Header/>
       <Switch>
-        <Route exact path="/" component={Home}></Route>
+        <DataProvider>
+          <Route exact path="/" component={Home}></Route>
+          <Route exact path="/:country" children={<Details/>}></Route>
+        </DataProvider>
       </Switch>
     </Router>
   )
