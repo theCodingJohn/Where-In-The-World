@@ -1,0 +1,26 @@
+body {
+  background: $light-gray;
+  transition: background 300ms, color 300ms;
+}
+
+body.dark {
+  background: $dark-blue-bg;
+  color: $white;
+  transition: background 300ms, color 300ms;
+}
+
+.container {
+  padding: 15px 20px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 30px 35px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding: 30px 80px;
+  }
+}
