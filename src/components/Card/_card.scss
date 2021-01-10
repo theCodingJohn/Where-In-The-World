@@ -1,0 +1,36 @@
+.card {
+  width: 100%;
+  max-width: 320px;
+  height: 350px;
+  background: $white;
+  border-radius: 6px;
+  overflow: hidden;
+  color: $black;
+  justify-self: center;
+  text-decoration: none;
+  box-shadow: 1px 1px 14px rgba($color: $black, $alpha: 0.2);
+  transition: color 300ms;
+  &__desc {
+    height: 50%;
+    padding: 23px;
+  }
+  &__img {
+    width: 100%;
+    height: 50%;
+  }
+  &__title {
+    margin-bottom: 15px;
+  }
+  &__item {
+    margin-bottom: 5px;
+    &--title {
+      font-weight: 700;
+    }
+  }
+}
+
+body.dark .card {
+  background: $dark-blue;
+  color: $white;
+  transition: background 300ms, color 300ms;
+}

@@ -1,0 +1,69 @@
+.input-container {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+}
+
+.input {
+  box-shadow: 1px 1px 14px rgba($color: $black, $alpha: 0.2);
+  border-radius: 6px;
+  color: $black;
+  border: none;
+  background-color: $white;
+  height: 40px;
+  &::placeholder {
+    color: $black;
+    transition: color 300ms;
+  }
+}
+
+.searchBar {
+  width: 100%;
+  max-width: 500px;
+  padding: 0 20px 0 43px;
+  background: $white url(/src/assets/searchLM.svg) no-repeat;
+  background-position: 9px;
+  transition: background 300ms, color 300ms;
+  margin-bottom: 15px;
+}
+
+.filterBar {
+  width: 170px;
+  padding: 0 5px;
+  select {
+    height: 10px;
+  }
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-gap: 15px;
+  padding-right: 0;
+  padding-left: 0;
+  a {
+    display: block;
+  }
+}
+
+body.dark .input {
+  background-color: $dark-blue;
+  color: $white;
+  transition: background-color 300ms, color 300ms;
+  &::placeholder {
+    color: $white;
+    transition: color 300ms;
+  }
+}
+
+body.dark .searchBar {
+  background: $dark-blue url(/src/assets/searchDM.svg) no-repeat;
+  background-position: 9px;
+  transition: background 300ms;
+}
+
+@media (min-width: 768px) {
+  .card-container {
+    grid-gap: 30px;
+  }
+}

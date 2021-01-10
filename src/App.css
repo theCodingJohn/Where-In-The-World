@@ -19,6 +19,22 @@ body.dark {
   transition: background 300ms, color 300ms;
 }
 
+.container {
+  padding: 15px 20px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 30px 35px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding: 30px 80px;
+  }
+}
+
 .nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -122,6 +138,175 @@ body.dark .mode-toggler .circle::after {
 @media (min-width: 992px) {
   .nav {
     padding: 0 80px;
+  }
+}
+
+.card {
+  width: 100%;
+  max-width: 320px;
+  height: 350px;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  color: #000;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  text-decoration: none;
+  -webkit-box-shadow: 1px 1px 14px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 14px rgba(0, 0, 0, 0.2);
+  -webkit-transition: color 300ms;
+  transition: color 300ms;
+}
+
+.card__desc {
+  height: 50%;
+  padding: 23px;
+}
+
+.card__img {
+  width: 100%;
+  height: 50%;
+}
+
+.card__title {
+  margin-bottom: 15px;
+}
+
+.card__item {
+  margin-bottom: 5px;
+}
+
+.card__item--title {
+  font-weight: 700;
+}
+
+body.dark .card {
+  background: #2b3945;
+  color: white;
+  -webkit-transition: background 300ms, color 300ms;
+  transition: background 300ms, color 300ms;
+}
+
+.input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.input {
+  -webkit-box-shadow: 1px 1px 14px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 14px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  color: #000;
+  border: none;
+  background-color: white;
+  height: 40px;
+}
+
+.input::-webkit-input-placeholder {
+  color: #000;
+  -webkit-transition: color 300ms;
+  transition: color 300ms;
+}
+
+.input:-ms-input-placeholder {
+  color: #000;
+  -webkit-transition: color 300ms;
+  transition: color 300ms;
+}
+
+.input::-ms-input-placeholder {
+  color: #000;
+  -webkit-transition: color 300ms;
+  transition: color 300ms;
+}
+
+.input::placeholder {
+  color: #000;
+  -webkit-transition: color 300ms;
+  transition: color 300ms;
+}
+
+.searchBar {
+  width: 100%;
+  max-width: 500px;
+  padding: 0 20px 0 43px;
+  background: white url(/src/assets/searchLM.svg) no-repeat;
+  background-position: 9px;
+  -webkit-transition: background 300ms, color 300ms;
+  transition: background 300ms, color 300ms;
+  margin-bottom: 15px;
+}
+
+.filterBar {
+  width: 170px;
+  padding: 0 5px;
+}
+
+.filterBar select {
+  height: 10px;
+}
+
+.card-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(320px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-gap: 15px;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.card-container a {
+  display: block;
+}
+
+body.dark .input {
+  background-color: #2b3945;
+  color: white;
+  -webkit-transition: background-color 300ms, color 300ms;
+  transition: background-color 300ms, color 300ms;
+}
+
+body.dark .input::-webkit-input-placeholder {
+  color: white;
+  -webkit-transition: color 300ms;
+  transition: color 300ms;
+}
+
+body.dark .input:-ms-input-placeholder {
+  color: white;
+  -webkit-transition: color 300ms;
+  transition: color 300ms;
+}
+
+body.dark .input::-ms-input-placeholder {
+  color: white;
+  -webkit-transition: color 300ms;
+  transition: color 300ms;
+}
+
+body.dark .input::placeholder {
+  color: white;
+  -webkit-transition: color 300ms;
+  transition: color 300ms;
+}
+
+body.dark .searchBar {
+  background: #2b3945 url(/src/assets/searchDM.svg) no-repeat;
+  background-position: 9px;
+  -webkit-transition: background 300ms;
+  transition: background 300ms;
+}
+
+@media (min-width: 768px) {
+  .card-container {
+    grid-gap: 30px;
   }
 }
 /*# sourceMappingURL=App.css.map */
