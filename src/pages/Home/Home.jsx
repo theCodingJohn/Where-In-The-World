@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useRef } from 'react'
+import React, { useEffect, useContext, useRef, useState } from 'react'
 import axios from "axios"
 import Card from '../../components/Card/Card'
 
@@ -6,6 +6,7 @@ import {DataContext} from "../../context/DataContext"
 
 const Home = () => {
   const { data, setData } = useContext(DataContext);
+  const [region, setRegion] = useState("all");
   const cardRef = useRef(null);
 
   // Search Feature
@@ -21,11 +22,17 @@ const Home = () => {
     })
   }
 
+  // Filter Feature
+  const filter = (e) => {
+    let value = e.target.value;
+    setRegion(value);
+  }
+
   // Fetch Data
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("https://restcountries.eu/rest/v2/all"); 
+        const res = await axios.get(`https://restcountries.eu/rest/v2/${region === "all" ? "all" : `region/${region}`}`); 
         localStorage.setItem("data", JSON.stringify(res.data));
         setData(res.data);
       } catch (e) {
@@ -33,7 +40,7 @@ const Home = () => {
       }
     }
     fetchData();
-  }, [])
+  }, [region])
 
   useEffect(() => {
     const localData = JSON.parse(localStorage.getItem('data')) || [];
@@ -45,10 +52,10 @@ const Home = () => {
     <main className="container">
       <form className="input-container">
         <input onChange={search} className="searchBar input" type="text" placeholder="Search for a country..." />
-        <select className="filterBar input">
-          <option>Filter by Region</option>
+        <select className="filterBar input" onChange={filter}>
+          <option value="all">Filter by Region</option>
           <option value="africa">Africa</option>
-          <option value="america">America</option>
+          <option value="americas">America</option>
           <option value="asia">Asia</option>
           <option value="europe">Europe</option>
           <option value="oceania">Oceania</option>
