@@ -1,12 +1,10 @@
 body {
   background: $light-gray;
-  transition: background 300ms, color 300ms;
 }
 
 body.dark {
   background: $dark-blue-bg;
   color: $white;
-  transition: background 300ms, color 300ms;
 }
 
 .container {

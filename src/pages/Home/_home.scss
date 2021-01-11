@@ -13,7 +13,6 @@
   height: 40px;
   &::placeholder {
     color: $black;
-    transition: color 300ms;
   }
 }
 
@@ -23,7 +22,6 @@
   padding: 0 20px 0 43px;
   background: $white url(/src/assets/searchLM.svg) no-repeat;
   background-position: 9px;
-  transition: background 300ms, color 300ms;
   margin-bottom: 15px;
 }
 
@@ -49,17 +47,14 @@
 body.dark .input {
   background-color: $dark-blue;
   color: $white;
-  transition: background-color 300ms, color 300ms;
   &::placeholder {
     color: $white;
-    transition: color 300ms;
   }
 }
 
 body.dark .searchBar {
   background: $dark-blue url(/src/assets/searchDM.svg) no-repeat;
   background-position: 9px;
-  transition: background 300ms;
 }
 
 @media (min-width: 768px) {
