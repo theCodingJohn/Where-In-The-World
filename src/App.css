@@ -158,6 +158,10 @@ body.dark .mode-toggler .circle::after {
   transition: transform 300ms, -webkit-transform 300ms;
 }
 
+.card h2 {
+  font-size: 20px;
+}
+
 .card:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
