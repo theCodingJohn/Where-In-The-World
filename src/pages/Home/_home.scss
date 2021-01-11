@@ -62,3 +62,9 @@ body.dark .searchBar {
     grid-gap: 30px;
   }
 }
+
+@media (max-width: 360px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,12 +1,27 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext, useRef } from 'react'
 import axios from "axios"
 import Card from '../../components/Card/Card'
 
 import {DataContext} from "../../context/DataContext"
 
 const Home = () => {
-  const {data, setData} = useContext(DataContext);
+  const { data, setData } = useContext(DataContext);
+  const cardRef = useRef(null);
 
+  // Search Feature
+  const search = (e) => {
+    let value = e.target.value.toLowerCase();
+    const arrayCards = cardRef.current.childNodes;
+    arrayCards.forEach(card => {
+      if (card.childNodes[1].firstChild.textContent.toLowerCase().indexOf(value) !== -1) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    })
+  }
+
+  // Fetch Data
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -29,7 +44,7 @@ const Home = () => {
   return (
     <main className="container">
       <form className="input-container">
-        <input className="searchBar input" type="text" placeholder="Search for a country..." />
+        <input onChange={search} className="searchBar input" type="text" placeholder="Search for a country..." />
         <select className="filterBar input">
           <option>Filter by Region</option>
           <option value="africa">Africa</option>
@@ -39,7 +54,7 @@ const Home = () => {
           <option value="oceania">Oceania</option>
         </select>
       </form>
-      <div className="container card-container">
+      <div ref={cardRef} className="container card-container">
         {cardItems}
       </div>
     </main>

@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-const Card = ({card}) => {
+const Card = ({card},) => {
   return (
     <Link to={`/${card.title}`} className="card">
       <div className="card__img" style={{background: `url(${card.flag}) no-repeat center`, backgroundSize: "cover"}}></div>
