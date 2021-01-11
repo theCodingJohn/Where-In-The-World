@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/*"
+  to = "https://restcountries-api-jc.netlify.app/"
+  status = 200
