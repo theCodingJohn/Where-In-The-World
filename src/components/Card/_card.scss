@@ -9,7 +9,6 @@
   justify-self: center;
   text-decoration: none;
   box-shadow: 1px 1px 14px rgba($color: $black, $alpha: 0.2);
-  transition: color 300ms;
   &__desc {
     height: 50%;
     padding: 23px;
@@ -32,5 +31,4 @@
 body.dark .card {
   background: $dark-blue;
   color: $white;
-  transition: background 300ms, color 300ms;
 }

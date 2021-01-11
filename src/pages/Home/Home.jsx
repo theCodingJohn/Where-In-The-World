@@ -8,7 +8,7 @@ const Home = () => {
   const {data, setData} = useContext(DataContext);
 
   useEffect(() => {
-    const getData = async () => {
+    const fetchData = async () => {
       try {
         const res = await axios.get("https://restcountries.eu/rest/v2/all"); 
         localStorage.setItem("data", JSON.stringify(res.data));
@@ -17,7 +17,7 @@ const Home = () => {
         console.log(e)
       }
     }
-    getData();
+    fetchData();
   }, [])
 
   useEffect(() => {

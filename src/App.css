@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,600;0,800;1,300;1,600;1,800&display=swap");
+body {
+  font-family: Nunito, sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,15 +12,11 @@
 
 body {
   background: #fafafa;
-  -webkit-transition: background 300ms, color 300ms;
-  transition: background 300ms, color 300ms;
 }
 
 body.dark {
   background: #202c37;
   color: white;
-  -webkit-transition: background 300ms, color 300ms;
-  transition: background 300ms, color 300ms;
 }
 
 .container {
@@ -98,8 +98,6 @@ body.dark {
 
 body.dark .nav {
   background: #2b3945;
-  -webkit-transition: background 300ms;
-  transition: background 300ms;
 }
 
 body.dark .mode-toggler .circle {
@@ -154,8 +152,6 @@ body.dark .mode-toggler .circle::after {
   text-decoration: none;
   -webkit-box-shadow: 1px 1px 14px rgba(0, 0, 0, 0.2);
           box-shadow: 1px 1px 14px rgba(0, 0, 0, 0.2);
-  -webkit-transition: color 300ms;
-  transition: color 300ms;
 }
 
 .card__desc {
@@ -183,8 +179,6 @@ body.dark .mode-toggler .circle::after {
 body.dark .card {
   background: #2b3945;
   color: white;
-  -webkit-transition: background 300ms, color 300ms;
-  transition: background 300ms, color 300ms;
 }
 
 .input-container {
@@ -210,26 +204,18 @@ body.dark .card {
 
 .input::-webkit-input-placeholder {
   color: #000;
-  -webkit-transition: color 300ms;
-  transition: color 300ms;
 }
 
 .input:-ms-input-placeholder {
   color: #000;
-  -webkit-transition: color 300ms;
-  transition: color 300ms;
 }
 
 .input::-ms-input-placeholder {
   color: #000;
-  -webkit-transition: color 300ms;
-  transition: color 300ms;
 }
 
 .input::placeholder {
   color: #000;
-  -webkit-transition: color 300ms;
-  transition: color 300ms;
 }
 
 .searchBar {
@@ -238,8 +224,6 @@ body.dark .card {
   padding: 0 20px 0 43px;
   background: white url(/src/assets/searchLM.svg) no-repeat;
   background-position: 9px;
-  -webkit-transition: background 300ms, color 300ms;
-  transition: background 300ms, color 300ms;
   margin-bottom: 15px;
 }
 
@@ -269,44 +253,172 @@ body.dark .card {
 body.dark .input {
   background-color: #2b3945;
   color: white;
-  -webkit-transition: background-color 300ms, color 300ms;
-  transition: background-color 300ms, color 300ms;
 }
 
 body.dark .input::-webkit-input-placeholder {
   color: white;
-  -webkit-transition: color 300ms;
-  transition: color 300ms;
 }
 
 body.dark .input:-ms-input-placeholder {
   color: white;
-  -webkit-transition: color 300ms;
-  transition: color 300ms;
 }
 
 body.dark .input::-ms-input-placeholder {
   color: white;
-  -webkit-transition: color 300ms;
-  transition: color 300ms;
 }
 
 body.dark .input::placeholder {
   color: white;
-  -webkit-transition: color 300ms;
-  transition: color 300ms;
 }
 
 body.dark .searchBar {
   background: #2b3945 url(/src/assets/searchDM.svg) no-repeat;
   background-position: 9px;
-  -webkit-transition: background 300ms;
-  transition: background 300ms;
 }
 
 @media (min-width: 768px) {
   .card-container {
     grid-gap: 30px;
+  }
+}
+
+.backButton-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 6px;
+  width: 130px;
+  height: 40px;
+  color: #000;
+  text-decoration: none;
+  background: white;
+  -webkit-box-shadow: 1px 1px 14px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 14px rgba(0, 0, 0, 0.2);
+}
+
+.backButton-wrapper:hover {
+  background-color: #f0e68c;
+}
+
+.backButton-wrapper svg {
+  margin-right: 5px;
+  width: 30px;
+  height: 20px;
+}
+
+.backButton {
+  position: relative;
+  margin-left: 5px;
+}
+
+.flag {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.details {
+  display: -ms-grid;
+  display: grid;
+  padding: 52px 0 20px 0;
+}
+
+.desc {
+  padding: 35px 0 0 0;
+}
+
+.desc h2 {
+  margin-bottom: 25px;
+}
+
+.desc p {
+  margin-bottom: 8px;
+}
+
+.desc__title {
+  font-weight: 700;
+}
+
+.borders {
+  margin-top: 25px;
+}
+
+.countryWrapper {
+  display: inline-block;
+  border-radius: 6px;
+  background: white;
+  padding: 8px;
+  margin: 6px 0 6px 6px;
+  text-decoration: none;
+  color: #000;
+  -webkit-box-shadow: 1px 1px 14px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 14px rgba(0, 0, 0, 0.2);
+}
+
+.countryWrapper:hover {
+  background-color: #f0e68c;
+}
+
+.countryWrapper p {
+  margin-bottom: 0;
+}
+
+body.dark .backButton-wrapper {
+  background: #2b3945;
+  color: white;
+}
+
+body.dark .backButton-wrapper:hover {
+  background-color: #6b6105;
+}
+
+body.dark .countryWrapper {
+  color: white;
+  background: #2b3945;
+}
+
+body.dark .countryWrapper:hover {
+  background-color: #6b6105;
+}
+
+@media (min-width: 250px) {
+  .flag {
+    height: 150px;
+  }
+}
+
+@media (min-width: 430px) {
+  .flag {
+    height: 290px;
+  }
+}
+
+@media (min-width: 768px) {
+  .flag {
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 992px) {
+  .details {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 30px;
+    padding: 0;
+    margin-top: 50px;
+  }
+  .details .desc {
+    padding: 0;
   }
 }
 /*# sourceMappingURL=App.css.map */
