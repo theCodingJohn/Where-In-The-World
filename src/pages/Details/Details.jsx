@@ -13,7 +13,7 @@ const Details = () => {
   // Find the country to be used in this page 
   const countryData = data.find(el => el.name === country);
 
-  const borderLinks = borders.map(el => <Link className="countryWrapper" key={el.name} to={`${el.name}`}><p>{el.name}</p></Link>)
+  const borderLinks = borders.map(el => <a className="countryWrapper" key={el.name} href={`/${el.name}`}><p>{el.name}</p></a>)
 
   useEffect(() => {
     const fetchData = async () => {
